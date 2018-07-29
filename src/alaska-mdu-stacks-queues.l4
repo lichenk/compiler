@@ -1,0 +1,87 @@
+//test return 42
+
+struct node_struct
+{
+  struct node_struct* next;
+  int data;
+};
+typedef struct node_struct node;
+
+struct stack_struct
+{
+  node* top;
+};
+typedef struct stack_struct* stack;
+
+struct queue_struct
+{
+  stack in;
+  stack out;
+};
+typedef struct queue_struct* queue;
+
+void push(stack s, int e)
+{
+  node* top = alloc(node);
+  top->next = s->top;
+  top->data = e;
+  s->top = top;
+}
+
+int pop(stack s)
+{
+  int ret = s->top->data;
+  s->top = s->top->next;
+  return ret;
+}
+
+bool stack_empty(stack s)
+{
+  return s->top == NULL;
+}
+
+void enqueue(queue q, int e)
+{
+  push(q->in, e);
+}
+
+int dequeue(queue q)
+{
+  if (stack_empty(q->out))
+  {
+    while(!stack_empty(q->in))
+    {
+      push(q->out, pop(q->in));
+    }
+  }
+
+  return pop(q->out);
+}
+
+int main()
+{
+  queue q = alloc(struct queue_struct);
+  q->in = alloc(struct stack_struct);
+  q->out = alloc(struct stack_struct);
+
+  for (int i = 0; i < 10; i++)
+  {
+    enqueue(q, i);
+  }
+
+  for (int i = 0; i < 5; i++)
+  {
+    assert(dequeue(q) == i);
+  }
+
+  for (int i = 10; i < 20; i++)
+  {
+    enqueue(q, i);
+  }
+
+  for (int i = 5; i < 20; i++)
+  {
+    assert(dequeue(q) == i);
+  }
+  return 42;
+}

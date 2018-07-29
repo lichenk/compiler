@@ -1,0 +1,254 @@
+lichenk@unix3:~/private/urgentc/northcarolina/lab6llvm/compiler$ ./autotimer-llvm.pl
+-- Building compiler --
+runhaskell Setup.hs configure
+Configuring c0c-0.0...
+runhaskell Setup.hs build
+Building c0c-0.0...
+Preprocessing executable 'c0c' for c0c-0.0...
+rm -rf bin/
+cp -r shellbins/ bin/
+chmod +x bin/*
+-- Benchmarking compiler --
+-- Running benchmark --
+-- Timing file ../bench0/cell.l4 --
+--safe -O0:             152830
+--unsafe -O0:            86105
+--safe -O2:             148042
+--unsafe -O2:            87857
+
+-- Timing file ../bench0/collatz.l4 --
+--safe -O0:              93333
+--unsafe -O0:            89125
+--safe -O2:             106960
+--unsafe -O2:            88912
+
+-- Timing file ../bench0/fibrec.l4 --
+--safe -O0:             124317
+--unsafe -O0:           124319
+--safe -O2:             124285
+--unsafe -O2:           217504
+
+-- Timing file ../bench0/floyd.l4 --
+--safe -O0:             142788
+--unsafe -O0:           143089
+--safe -O2:             143541
+--unsafe -O2:           141161
+
+-- Timing file ../bench0/gcd.l4 --
+--safe -O0:             163004
+--unsafe -O0:           155471
+--safe -O2:             155466
+--unsafe -O2:           153048
+
+-- Timing file ../bench0/list.l4 --
+--safe -O0:             167633
+--unsafe -O0:           159110
+--safe -O2:             159778
+--unsafe -O2:           167955
+
+-- Timing file ../bench0/mmult.l4 --
+--safe -O0:             223531
+--unsafe -O0:           108359
+--safe -O2:             222445
+--unsafe -O2:           108353
+
+-- Timing file ../bench0/mmult2.l4 --
+--safe -O0:             255394
+--unsafe -O0:           122550
+--safe -O2:             258099
+--unsafe -O2:           122591
+
+-- Timing file ../bench0/msort.l4 --
+--safe -O0:             196613
+--unsafe -O0:           171678
+--safe -O2:             196029
+--unsafe -O2:           165031
+
+-- Timing file ../bench0/prime.l4 --
+--safe -O0:              72064
+--unsafe -O0:            72034
+--safe -O2:              71742
+--unsafe -O2:            71749
+
+-- Timing file ../bench0/qsort.l4 --
+--safe -O0:             279220
+--unsafe -O0:           163006
+--safe -O2:             279951
+--unsafe -O2:           163053
+
+-- Timing file ../bench0/shifts.l4 --
+--safe -O0:                126
+--unsafe -O0:              126
+--safe -O2:                126
+--unsafe -O2:              126
+
+-- Timing file ../bench0/tree.l4 --
+llvm-as: <stdin>:243:7: error: value doesn't match function result type '%struct.tree_node*'
+  ret i8* %r17ptrvoidz
+      ^
+/tmp/ccQIXDaM.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccQIXDaM.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:243:7: error: value doesn't match function result type '%struct.tree_node*'
+  ret i8* %r17ptrvoidz
+      ^
+/tmp/ccre6uZX.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccre6uZX.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:243:7: error: value doesn't match function result type '%struct.tree_node*'
+  ret i8* %r17ptrvoidz
+      ^
+/tmp/cca9jFHa.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/cca9jFHa.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:243:7: error: value doesn't match function result type '%struct.tree_node*'
+  ret i8* %r17ptrvoidz
+      ^
+/tmp/ccdG9o0g.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccdG9o0g.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+
+-- Timing file ../bench1/avl.l4 --
+llvm-as: <stdin>:1215:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r22ptrvoidz
+      ^
+/tmp/cc38eIdv.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/cc38eIdv.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1150:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r22ptrvoidz
+      ^
+/tmp/ccOYaOlM.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccOYaOlM.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1215:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r22ptrvoidz
+      ^
+/tmp/cc0Ds1M1.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/cc0Ds1M1.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1150:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r22ptrvoidz
+      ^
+/tmp/ccyc33Lh.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccyc33Lh.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+
+-- Timing file ../bench1/hashtable.l4 --
+llvm-as: <stdin>:1525:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r128ptrvoidz
+      ^
+/tmp/cctXuBAl.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/cctXuBAl.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1362:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r117ptrvoidz
+      ^
+/tmp/ccKhnwuz.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccKhnwuz.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1525:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r128ptrvoidz
+      ^
+/tmp/ccMHkNeO.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccMHkNeO.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+llvm-as: <stdin>:1362:7: error: value doesn't match function result type '%struct.wcount*'
+  ret i8* %r117ptrvoidz
+      ^
+/tmp/ccaSf5m1.o: In function `main':
+bench.c:(.text+0x2ec): undefined reference to `_c0_init'
+bench.c:(.text+0x301): undefined reference to `_c0_prepare'
+bench.c:(.text+0x32e): undefined reference to `_c0_checksum'
+bench.c:(.text+0x360): undefined reference to `_c0_checksum'
+bench.c:(.text+0x3ae): undefined reference to `_c0_prepare'
+/tmp/ccaSf5m1.o: In function `time_run':
+bench.c:(.text+0x4ff): undefined reference to `_c0_run'
+collect2: error: ld returned 1 exit status
+assembly failure
+
+-- Timing file ../bench1/heaps.l4 --
+--safe -O0:            2693925
+--unsafe -O0:          1601501
+--safe -O2:            2544546
+--unsafe -O2:          1524789
+
+Driver string :0:87857:88912:217504:141161:153048:167955:108353:122591:165031:71749:163053:126:0:0:0:1524789:
+lichenk@unix3:~/private/urgentc/northcarolina/lab6llvm/compiler$ 

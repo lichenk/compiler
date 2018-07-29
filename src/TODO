@@ -1,0 +1,12 @@
+0. Array allocation and access is not tested in Codegen
+
+1. In LLVMStructGen, Padding is not supported and never was, since original code has the following bug:
+Former padding code used the size of a struct as its alignment. But that is incorrect.
+The alignment of a struct should be the maximum alignment of its fields
+NOT the size of the struct.
+
+2. Proper function markers must be made
+
+3. Struct declarations
+
+4. Declare structs for arrays
